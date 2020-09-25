@@ -12,7 +12,7 @@ namespace GradeBookTests
                 "toto", "titi", "grosminet", "riri", "fifi", "loulou"
             };
             var grades = new double[] { 50.0, 30.0, 60.0, 40.0, 80.0, 70.0 };
-            RankedGradeBook book = new RankedGradeBook("class");
+            RankedGradeBook book = new RankedGradeBook("class", false);
             for (int i = 0; i < names.Length; i++)
             {
                 book.AddStudent(new GradeBook.Student(
@@ -53,6 +53,17 @@ namespace GradeBookTests
             Assert.Equal('B', book.GetLetterGrade(75.0));
             Assert.Equal('A', book.GetLetterGrade(80.0));
             Assert.Equal('A', book.GetLetterGrade(90.0));
+        }
+
+        [Fact]
+        public void TestParts()
+        {
+        //Given
+            var l = "this is a test";
+        //When
+            var parts = l.Split(" ");
+        //Then
+        
         }
     }
 }
